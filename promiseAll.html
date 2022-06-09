@@ -1,0 +1,24 @@
+<script>
+  const promise1 = new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve("package 1");
+    }, 1000);
+  });
+  const promise2 = new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve("package 2");
+    }, 2000);
+  });
+  const promise3 = new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve("package 3");
+    }, 3000);
+  });
+  Promise.all([promise1, promise2, promise3])
+    .then((data) => {
+      console.log(data)
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+</script>
